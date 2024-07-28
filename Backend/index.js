@@ -16,14 +16,16 @@ const app = express();
 const port =5000;
 
 const corsOptions = {
-  origin: true,
+  origin: ["https://nex-care-mu.vercel.app"],
+  methods:['POST','GET','DELETE'],
+  credentials:true
 };
 
 //Add Access Control Allow Origin headers
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "http://localhost:5173"
+    "https://nex-care-mu.vercel.app"
   );
   res.header(
     "Access-Control-Allow-Headers",
